@@ -9,7 +9,7 @@ const StackLayout = () => {
                 backgroundColor: 'green',
             },
             contentStyle: {
-                backgroundColor: 'transparent',
+                backgroundColor: 'white',
             }
         }
         }
