@@ -3,27 +3,44 @@ import React, {forwardRef, Ref} from 'react'
 
 interface Props extends PressableProps {
     children: string
-    color?: 'primary' | 'secondary' | 'tertiary'
+    color?: 'primary' | 'secondary' | 'tertiary' | 'white'
     variants?: 'contained' | 'text-only'
+    className?: string
 }
 
-const CustomButton = forwardRef(({children, color = 'primary',variants, ...props}: Props, ref:Ref<View>) => {
+const CustomButton = forwardRef(({children, color = 'white', variants,className, ...props}: Props, ref: Ref<View>) => {
 
     const btnColor = {
         primary: 'bg-primary',
         secondary: 'bg-secondary',
         tertiary: 'bg-tertiary',
+        white: 'bg-white',
+    }[color]
+
+    const textColor = {
+        primary: 'bg-primary',
+        secondary: 'bg-secondary',
+        tertiary: 'bg-tertiary',
+        white: 'bg-white',
     }[color]
 
 
-    if(variants == 'text-only')
+    if (variants == 'text-only') {
+        return (<Pressable
+            {...props}
+            className={`p-3 ${className}`}
+            ref={ref}
+        >
+            <Text className={`text-center ${textColor} font-work-medium`}>{children}</Text>
+        </Pressable>)
+    }
     return (
         <Pressable
             {...props}
-            className={`p-3 rounded-md ${btnColor} active:opacity-90`}
+            className={`p-3 rounded-md ${btnColor} active:opacity-90 ${className}`}
             ref={ref}
         >
-            <Text className="text-white text-center">{children}</Text>
+            <Text className="text-white text-center font-work-medium">{children}</Text>
         </Pressable>
     )
 })

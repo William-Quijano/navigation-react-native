@@ -25,7 +25,7 @@ const RootLayout = () => {
 
 
 
-    return <Slot/>
+    return <Slot />
 
 }
 export default RootLayout
