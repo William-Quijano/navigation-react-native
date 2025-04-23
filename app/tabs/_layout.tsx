@@ -1,23 +1,23 @@
 
 import React from 'react'
 import {Tabs} from "expo-router";
-import {FontAwesome} from "@expo/vector-icons";
+import {Ionicons} from "@expo/vector-icons";
 
 const TabsLayout = () => {
     return (
         <Tabs screenOptions={{ tabBarActiveTintColor: 'blue' }}>
             <Tabs.Screen
-                name="index"
+                name="home/index"
                 options={{
                     title: 'Home',
-                    tabBarIcon: ({ color }) => <FontAwesome size={28} name="home" color={color} />,
+                    tabBarIcon: ({ color }) => <Ionicons size={28} name="home-outline" color={color} />,
                 }}
             />
             <Tabs.Screen
-                name="settings"
+                name="favorites/index"
                 options={{
-                    title: 'Settings',
-                    tabBarIcon: ({ color }) => <FontAwesome size={28} name="cog" color={color} />,
+                    title: 'Favorites',
+                    tabBarIcon: ({ color }) => <Ionicons size={28} name="star-outline" color={color} />,
                 }}
             />
         </Tabs>
