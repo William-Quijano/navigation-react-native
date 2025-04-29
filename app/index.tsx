@@ -4,7 +4,7 @@ import {Link, Redirect} from "expo-router";
 const App = () => {
     return (
 
-        <Redirect href="/drawer/user"  />
+        <Redirect href="/home"  />
         // <SafeAreaView>
         //     <View className="mt-6 mx-2.5">
         //         <Text
